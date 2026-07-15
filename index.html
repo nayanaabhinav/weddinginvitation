@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayana & Abhinav Wedding Invitation</title>
+    <!-- Elegant Serif and Sans-serif Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h2 class="sub-title">Are Together Welcoming You To Their Wedding</h2>
+            <h1 class="main-title">Nayana &amp; Abhinav</h1>
+            <p class="wedding-date">August 23, 2026</p>
+        </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <h2>Counting Down To The Big Day</h2>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days">00</span>
+                <div class="label">Days</div>
+            </div>
+            <div class="countdown-box">
+                <span id="hours">00</span>
+                <div class="label">Hours</div>
+            </div>
+            <div class="countdown-box">
+                <span id="mins">00</span>
+                <div class="label">Mins</div>
+            </div>
+            <div class="countdown-box">
+                <span id="secs">00</span>
+                <div class="label">Secs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <h2 class="section-title">Wedding Events</h2>
+        <div class="events-grid">
+            
+            <!-- Event 1: Marriage -->
+            <div class="event-card">
+                <h3>The Marriage</h3>
+                <div class="event-details">
+                    <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
+                    <p><strong>Venue:</strong> Meenakshi Mahal</p>
+                    <p class="address">Polpully, Palakkad, Kerala</p>
+                </div>
+                <div class="event-actions">
+                    <a href="https://maps.google.com/?q=Meenakshi+Mahal+Polpully+Palakkad" target="_blank" class="btn btn-outline">View Map</a>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Nayana+%26+Abhinav+Marriage&amp;dates=20260823T050000Z/20260823T080000Z&amp;details=Marriage+ceremony+of+Nayana+and+Abhinav&amp;location=Meenakshi+Mahal,+Polpully,+Palakkad" target="_blank" class="btn btn-solid">Add to Calendar</a>
+                </div>
+            </div>
+
+            <!-- Event 2: Reception -->
+            <div class="event-card">
+                <h3>The Reception</h3>
+                <div class="event-details">
+                    <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
+                    <p><strong>Venue:</strong> Mohamed Bagh Event Centre</p>
+                    <p class="address">Sulaiman Sahib Rd, opposite Elegant Public School, behind Mangalam Towers, Valakkad, Palakkad, Kerala 678014</p>
+                </div>
+                <div class="event-actions">
+                    <a href="https://maps.google.com/?q=Mohamed+Bagh+Event+Centre+Palakkad" target="_blank" class="btn btn-outline">View Map</a>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Nayana+%26+Abhinav+Wedding+Reception&amp;dates=20260823T113000Z/20260823T153000Z&amp;details=Wedding+Reception+of+Nayana+and+Abhinav&amp;location=Mohamed+Bagh+Event+Centre,+Valakkad,+Palakkad,+Kerala+678014" target="_blank" class="btn btn-solid">Add to Calendar</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-note">We await your presence to bless our new journey.</p>
+        <p class="copyright">© 2026 Nayana &amp; Abhinav</p>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set target countdown date to August 23, 2026
+        const targetDate = new Date("August 23, 2026 00:00:00").getTime();
+
+        const countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector(".countdown-container").innerHTML = "<p style='font-family: Montserrat, sans-serif; color: #1e3a8a; font-weight: 500;'>The Big Day Has Arrived!</p>";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("mins").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("secs").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
+</body>
+</html>
