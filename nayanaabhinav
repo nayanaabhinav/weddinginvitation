@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhinav & Nayana Wedding Invitation</title>
+    <title>Nayana & Abhinav Wedding Invitation</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -36,9 +36,9 @@
             align-items: center;
             padding: 20px;
             color: #ffffff;
-            /* Using the high-compatibility usercontent endpoint to ensure the image streams on deployed platforms */
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)), 
-                        url('https://drive.google.com/uc?export=view&id=1k_K6LeXh3bZNWQA41jWtqLR849gOiHCg') center top 20%/cover no-repeat;
+            /* FIXED: Replaced broken URL with your direct Google Drive image link */
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), 
+                        url('https://drive.google.com/uc?export=view&id=1k_K6LeXh3bZNWQA41jWtqLR849gOiHCg') center center/cover no-repeat;
         }
 
         .hero h2 {
@@ -253,14 +253,12 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h2>Are Together Welcoming You To Their Wedding</h2>
         <h1>Nayana & Abhinav</h1>
         <p>August 23, 2026</p>
     </section>
 
-    <!-- Countdown Section -->
     <section class="countdown-section">
         <h2>Counting Down To The Big Day</h2>
         <div class="countdown-container">
@@ -283,12 +281,10 @@
         </div>
     </section>
 
-    <!-- Events & Venues Section -->
     <section class="events-section">
         <h2>Wedding Events</h2>
         <div class="events-grid">
             
-            <!-- Muhurtham Card -->
             <div class="event-card">
                 <h3>Wedding Muhurtham</h3>
                 <div class="event-details">
@@ -298,12 +294,11 @@
                     <p class="address-sub">PPJG+97P, Polpully, Kerala 678552</p>
                 </div>
                 <div>
-                    <a href="https://maps.google.com/?q=Meenakshi+Mahal+Polpully+Kerala" target="_blank" class="btn">View Map</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Mahal+Polpully+Kerala+678552" target="_blank" class="btn">View Map</a>
                     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nayana+%26+Abhinav+Wedding+Muhurtham&dates=20260823T050000Z/20260823T060000Z&details=Wedding+Muhurtham+of+Nayana+and+Abhinav&location=Meenakshi+Mahal,+Polpully,+Kerala+678552" target="_blank" class="btn btn-secondary">Add to Calendar</a>
                 </div>
             </div>
 
-            <!-- Reception Card -->
             <div class="event-card">
                 <h3>Wedding Reception</h3>
                 <div class="event-details">
@@ -313,42 +308,3 @@
                     <p class="address-sub">Sulaiman Sahib Rd, opposite Elegant Public School, behind Mangalam Towers, Valakkad, Palakkad, Kerala 678014</p>
                 </div>
                 <div>
-                    <a href="https://maps.google.com/?q=Mohamed+Bagh+Event+Centre+Palakkad" target="_blank" class="btn">View Map</a>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nayana+%26+Abhinav+Wedding+Reception&dates=20260823T113000Z/20260823T153000Z&details=Wedding+Reception+of+Nayana+and+Abhinav&location=Mohamed+Bagh+Event+Centre,+Valakkad,+Palakkad,+Kerala+678014" target="_blank" class="btn btn-secondary">Add to Calendar</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>We await your presence to bless our new journey.</p>
-        <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 15px;">&copy; 2026 Nayana & Abhinav</p>
-    </footer>
-
-    <!-- Countdown Timer Script -->
-    <script>
-        const weddingDate = new Date("August 23, 2026 10:30:00").getTime();
-
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(timer);
-                document.querySelector(".countdown-container").innerHTML = "<h3 style='color: #ba964c;'>The Celebration Has Begun!</h3>";
-            }
-        }, 1000);
-    </script>
-</body>
-</html>
