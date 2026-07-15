@@ -55,15 +55,12 @@
             position: relative;
             padding: 40px 20px;
 
-            /* ===== CHANGE THIS URL ===== */
-            /* Option 1: Imgur (recommended) */
-            background-image: url('https://drive.google.com/uc?export=view&id=1mNAO8WK8gttdh3LSxNpr2ZcrQixZ8UgO');
+            /* ===== IMAGE CONFIGURATION ===== */
+            /* Fallback luxury gradient if the image takes time to load */
+            background-color: var(--primary-navy); 
             
-            /* Option 2: Google Drive alternative */
-            /* background-image: url('https://lh3.googleusercontent.com/d/1mNAO8WK8gttdh3LSxNpr2ZcrQixZ8UgO'); */
-            
-            /* Option 3: Local file */
-            /* background-image: url('background.jpg'); */
+            /* REPLACE THE LINK BELOW WITH YOUR HIGH-RES IMGUR OR HOSTED IMAGE DIRECT LINK */
+            background-image: url('https://drive.google.com/uc?export=view&id=1mNAO8WK8gttdh3LSxNpr2ZcrQixZ8UgO'); 
             
             background-size: cover;
             background-position: center;
@@ -79,7 +76,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.4); /* Slightly deepened for better white text contrast */
             z-index: 0;
         }
 
@@ -112,6 +109,7 @@
             letter-spacing: 8px;
             text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
             margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .main-title .ampersand {
@@ -126,7 +124,7 @@
             letter-spacing: 10px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
         }
 
@@ -136,9 +134,9 @@
             color: var(--primary-gold);
             letter-spacing: 6px;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-            margin-top: 10px;
+            margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* ===== COUNTDOWN SECTION ===== */
@@ -446,6 +444,7 @@
             font-size: 0.8rem;
             opacity: 0.5;
             letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         /* ===== RESPONSIVE ===== */
