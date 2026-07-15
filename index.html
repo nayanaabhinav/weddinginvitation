@@ -53,7 +53,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            padding: 40px 20px;
+            padding: 20px 20px 80px 20px; /* Increased bottom padding to push text layout upwards */
             background-color: var(--primary-navy); 
             background-image: url('https://lh3.googleusercontent.com/d/1mNAO8WK8gttdh3LSxNpr2ZcrQixZ8UgO'); 
             background-size: cover;
@@ -74,24 +74,25 @@
             z-index: 0;
         }
 
-        /* Hero content */
+        /* Hero content - Upward alignment shifted via transform nudge */
         .hero-content {
             max-width: 900px;
             position: relative;
             z-index: 1;
-            padding: 60px 50px;
+            padding: 40px 50px;
             background: transparent;
-            animation: fadeInUp 1.5s ease;
+            transform: translateY(-40px); /* Nudges text up visually from exact baseline center */
+            animation: fadeInUp 1.5s ease forwards;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(10px); /* Smooth entrance relative to final high-center position */
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(-40px);
             }
         }
 
@@ -451,12 +452,24 @@
             .hero-content {
                 padding: 40px 25px;
                 margin: 0 15px;
+                transform: translateY(-20px); /* Slightly reduced shift on mobile viewports for scaling balance */
             }
 
             .hero-section {
                 min-height: 100vh;
                 background-attachment: scroll;
-                padding: 20px;
+                padding: 20px 20px 40px 20px;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(-20px);
+                }
             }
 
             .events-grid {
