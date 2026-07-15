@@ -20,13 +20,14 @@
 
         :root {
             --primary-gold: #b8860b;
-            --primary-navy: #1a2a6c;
-            --primary-cream: #fdf8f3;
+            --primary-navy: #1e3a8a;
+            --primary-cream: #f8f4f0;
             --text-dark: #2d2d2d;
             --text-light: #666;
             --white: #ffffff;
             --shadow-sm: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.1);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
             --border-radius: 16px;
         }
 
@@ -35,167 +36,69 @@
             background: var(--primary-cream);
             color: var(--text-dark);
             line-height: 1.6;
-            min-height: 100vh;
         }
 
-        /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
+        .app {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HERO SECTION ===== */
         .hero-section {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            background: linear-gradient(135deg, var(--primary-cream) 0%, #e8e0d8 100%);
             position: relative;
             padding: 40px 20px;
-            
-            /* === BACKGROUND IMAGE === */
-            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            
-            /* Overlay for better text readability */
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(26, 42, 108, 0.4) 0%,
-                rgba(26, 42, 108, 0.2) 50%,
-                rgba(26, 42, 108, 0.5) 100%
-            );
-            z-index: 0;
-        }
-
-        /* Decorative overlay pattern */
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
-            z-index: 0;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 800px;
             position: relative;
             z-index: 1;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1.5s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Decorative border corners */
-        .hero-content::before {
-            content: '✦';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--primary-gold);
-            font-size: 2rem;
-            background: var(--white);
-            padding: 0 15px;
         }
 
         .main-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 600;
-            color: var(--white);
-            letter-spacing: 6px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            color: var(--primary-navy);
+            letter-spacing: 4px;
             margin-bottom: 10px;
         }
 
-        .main-title .ampersand {
-            color: var(--primary-gold);
-            font-style: italic;
-        }
-
         .sub-title {
-            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
             font-weight: 300;
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-light);
             margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .wedding-date {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             color: var(--primary-gold);
-            letter-spacing: 4px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            margin-top: 10px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            letter-spacing: 3px;
         }
 
         /* ===== COUNTDOWN SECTION ===== */
         .countdown-section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             background: var(--white);
-            position: relative;
-        }
-
-        .countdown-section::before {
-            content: '❀';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            color: var(--primary-gold);
-            background: var(--white);
-            padding: 0 20px;
         }
 
         .countdown-section h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             color: var(--primary-navy);
             margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        .countdown-section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background: var(--primary-gold);
-            margin: 15px auto 0;
         }
 
         .countdown-container {
@@ -206,58 +109,48 @@
         }
 
         .countdown-box {
-            background: linear-gradient(135deg, var(--primary-cream) 0%, #f5ede4 100%);
-            padding: 25px 35px;
+            background: var(--primary-cream);
+            padding: 20px 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-sm);
-            min-width: 90px;
+            min-width: 80px;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(184, 134, 11, 0.1);
-            position: relative;
+            transition: transform 0.3s ease;
         }
 
         .countdown-box:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
         }
 
         .countdown-box span {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 600;
             display: block;
             line-height: 1;
-            color: var(--primary-navy);
-            background: linear-gradient(135deg, var(--primary-navy), #4a6fa5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-gold);
         }
 
         .countdown-box .label {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--text-light);
             margin-top: 8px;
-            font-weight: 500;
         }
 
         /* ===== EVENTS SECTION ===== */
         .events-section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             background: var(--primary-cream);
         }
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             color: var(--primary-navy);
             text-align: center;
             margin-bottom: 50px;
-            font-weight: 600;
-            position: relative;
         }
 
         .section-title::after {
@@ -266,67 +159,38 @@
             color: var(--primary-gold);
             font-size: 1.2rem;
             margin-top: 10px;
-            letter-spacing: 10px;
+            letter-spacing: 8px;
         }
 
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 35px;
-            max-width: 1100px;
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .event-card {
             background: var(--white);
             border-radius: var(--border-radius);
-            padding: 35px 30px;
+            padding: 30px;
             box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             border: 1px solid rgba(184, 134, 11, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-gold), var(--primary-navy));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .event-card:hover::before {
-            opacity: 1;
         }
 
         .event-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
 
         .event-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
             color: var(--primary-navy);
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 2px solid var(--primary-gold);
-            position: relative;
-        }
-
-        .event-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--primary-navy);
         }
 
         .event-details {
@@ -334,31 +198,27 @@
         }
 
         .event-details p {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 0.95rem;
-            color: var(--text-dark);
         }
 
         .event-details strong {
             color: var(--primary-navy);
-            font-weight: 600;
         }
 
         .event-details .address {
             color: var(--text-light);
             font-size: 0.9rem;
-            padding-left: 28px;
+            padding-left: 25px;
             position: relative;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(184, 134, 11, 0.2);
+            margin-top: 8px;
         }
 
         .event-details .address::before {
             content: "📍";
             position: absolute;
             left: 0;
-            top: 10px;
+            top: 0;
         }
 
         .venue-name {
@@ -376,9 +236,9 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -388,20 +248,17 @@
             text-align: center;
             flex: 1;
             min-width: 120px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         .btn-solid {
-            background: linear-gradient(135deg, var(--primary-gold), #d4a017);
+            background: var(--primary-gold);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
         }
 
         .btn-solid:hover {
-            background: linear-gradient(135deg, var(--primary-navy), #2a4a8a);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(26, 42, 108, 0.3);
+            background: var(--primary-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
         }
 
         .btn-outline {
@@ -413,57 +270,39 @@
         .btn-outline:hover {
             background: var(--primary-navy);
             color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(26, 42, 108, 0.2);
+            transform: translateY(-2px);
         }
 
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
-            padding: 50px 20px 30px;
-            background: linear-gradient(135deg, var(--primary-navy), #2a4a8a);
+            padding: 40px 20px;
+            background: var(--primary-navy);
             color: var(--white);
-            position: relative;
-        }
-
-        footer::before {
-            content: '❀ ❀ ❀';
-            display: block;
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-            letter-spacing: 10px;
-            margin-bottom: 15px;
         }
 
         .footer-note {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-size: 1.2rem;
             font-style: italic;
-            margin-bottom: 12px;
-            opacity: 0.9;
+            margin-bottom: 10px;
         }
 
         .copyright {
             font-size: 0.8rem;
-            opacity: 0.6;
-            letter-spacing: 2px;
+            opacity: 0.7;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero-content {
-                padding: 40px 25px;
-                margin: 0 15px;
-            }
-
             .hero-section {
-                min-height: 80vh;
-                background-attachment: scroll;
+                min-height: 60vh;
+                padding: 30px 15px;
             }
 
             .events-grid {
                 grid-template-columns: 1fr;
-                padding: 0 10px;
+                padding: 0;
             }
 
             .countdown-container {
@@ -471,12 +310,8 @@
             }
 
             .countdown-box {
-                min-width: 65px;
-                padding: 18px 20px;
-            }
-
-            .countdown-box span {
-                font-size: 2.5rem;
+                min-width: 60px;
+                padding: 15px 20px;
             }
 
             .event-actions {
@@ -489,17 +324,13 @@
             }
 
             .event-card {
-                padding: 25px 20px;
-            }
-
-            .event-details p {
-                font-size: 0.88rem;
+                padding: 20px;
             }
         }
 
         @media (max-width: 480px) {
             .countdown-box {
-                min-width: 55px;
+                min-width: 50px;
                 padding: 12px 15px;
             }
 
@@ -507,91 +338,82 @@
                 font-size: 2rem;
             }
 
-            .countdown-box .label {
-                font-size: 0.6rem;
-                letter-spacing: 2px;
-            }
-
-            .hero-content {
-                padding: 30px 20px;
-            }
-
-            .main-title {
-                font-size: 2.5rem;
-                letter-spacing: 3px;
+            .event-details p {
+                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="app">
+        <header class="hero-section">
+            <div class="hero-content">
+                <h2 class="sub-title">Are Together Welcoming You To Their Wedding</h2>
+                <h1 class="main-title">Abhinav &amp; Nayana</h1>
+                <p class="wedding-date">August 23, 2026</p>
+            </div>
+        </header>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h2 class="sub-title">Are Together Welcoming You To Their Wedding</h2>
-            <h1 class="main-title">Abhinav <span class="ampersand">&amp;</span> Nayana</h1>
-            <p class="wedding-date">August 23, 2026</p>
-        </div>
-    </header>
-
-    <section class="countdown-section">
-        <h2>Counting Down To The Big Day</h2>
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <span id="days">00</span>
-                <div class="label">Days</div>
-            </div>
-            <div class="countdown-box">
-                <span id="hours">00</span>
-                <div class="label">Hours</div>
-            </div>
-            <div class="countdown-box">
-                <span id="mins">00</span>
-                <div class="label">Mins</div>
-            </div>
-            <div class="countdown-box">
-                <span id="secs">00</span>
-                <div class="label">Secs</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events-section">
-        <h2 class="section-title">Wedding Events</h2>
-        <div class="events-grid">
-            
-            <div class="event-card">
-                <h3>The Marriage</h3>
-                <div class="event-details">
-                    <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
-                    <p><strong>Venue:</strong> <span class="venue-name">Meenakshi Mahal</span></p>
-                    <p class="address">Polpully, Palakkad, Kerala</p>
+        <section class="countdown-section">
+            <h2>Counting Down To The Big Day</h2>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <div class="label">Days</div>
                 </div>
-                <div class="event-actions">
-                    <a href="https://maps.google.com/?q=Meenakshi+Mahal+Polpully+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 View Map</a>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhinav+%26+Nayana+Marriage&dates=20260823T050000Z/20260823T080000Z&details=Marriage+ceremony+of+Abhinav+and+Nayana&location=Meenakshi+Mahal,+Polpully,+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-solid">📅 Add to Calendar</a>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <span id="mins">00</span>
+                    <div class="label">Mins</div>
+                </div>
+                <div class="countdown-box">
+                    <span id="secs">00</span>
+                    <div class="label">Secs</div>
                 </div>
             </div>
+        </section>
 
-            <div class="event-card">
-                <h3>The Reception</h3>
-                <div class="event-details">
-                    <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
-                    <p><strong>Venue:</strong> <span class="venue-name">Mohamed Bagh Event Centre</span></p>
-                    <p class="address">Sulaiman Sahib Rd, opposite Elegant Public School, behind Mangalam Towers, Valakkad, Palakkad, Kerala 678014</p>
+        <section class="events-section">
+            <h2 class="section-title">Wedding Events</h2>
+            <div class="events-grid">
+                
+                <div class="event-card">
+                    <h3>The Marriage</h3>
+                    <div class="event-details">
+                        <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
+                        <p><strong>Venue:</strong> <span class="venue-name">Meenakshi Mahal</span></p>
+                        <p class="address">Polpully, Palakkad, Kerala</p>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://maps.google.com/?q=Meenakshi+Mahal+Polpully+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 View Map</a>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhinav+%26+Nayana+Marriage&dates=20260823T050000Z/20260823T080000Z&details=Marriage+ceremony+of+Abhinav+and+Nayana&location=Meenakshi+Mahal,+Polpully,+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-solid">📅 Add to Calendar</a>
+                    </div>
                 </div>
-                <div class="event-actions">
-                    <a href="https://maps.google.com/?q=Mohamed+Bagh+Event+Centre+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 View Map</a>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhinav+%26+Nayana+Wedding+Reception&dates=20260823T113000Z/20260823T153000Z&details=Wedding+Reception+of+Abhinav+and+Nayana&location=Mohamed+Bagh+Event+Centre,+Valakkad,+Palakkad,+Kerala+678014" target="_blank" rel="noopener noreferrer" class="btn btn-solid">📅 Add to Calendar</a>
+
+                <div class="event-card">
+                    <h3>The Reception</h3>
+                    <div class="event-details">
+                        <p><strong>Date:</strong> Sunday, 23rd August 2026</p>
+                        <p><strong>Venue:</strong> <span class="venue-name">Mohamed Bagh Event Centre</span></p>
+                        <p class="address">Sulaiman Sahib Rd, opposite Elegant Public School, behind Mangalam Towers, Valakkad, Palakkad, Kerala 678014</p>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://maps.google.com/?q=Mohamed+Bagh+Event+Centre+Palakkad" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 View Map</a>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhinav+%26+Nayana+Wedding+Reception&dates=20260823T113000Z/20260823T153000Z&details=Wedding+Reception+of+Abhinav+and+Nayana&location=Mohamed+Bagh+Event+Centre,+Valakkad,+Palakkad,+Kerala+678014" target="_blank" rel="noopener noreferrer" class="btn btn-solid">📅 Add to Calendar</a>
+                    </div>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <footer>
-        <p class="footer-note">We await your presence to bless our new journey.</p>
-        <p class="copyright">&copy; 2026 Abhinav &amp; Nayana</p>
-    </footer>
+        <footer>
+            <p class="footer-note">We await your presence to bless our new journey.</p>
+            <p class="copyright">&copy; 2026 Abhinav &amp; Nayana</p>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -606,7 +428,7 @@
                     clearInterval(countdownInterval);
                     const container = document.querySelector(".countdown-container");
                     if (container) {
-                        container.innerHTML = "<p style='font-family: \"Cormorant Garamond\", serif; font-size: 2rem; color: #1a2a6c;'>🎉 The Big Day Has Arrived! 🎉</p>";
+                        container.innerHTML = "<p style='font-family: \"Cormorant Garamond\", serif; font-size: 2rem; color: #1e3a8a;'>🎉 The Big Day Has Arrived! 🎉</p>";
                     }
                     return;
                 }
@@ -637,6 +459,5 @@
             });
         });
     </script>
-
 </body>
 </html>
