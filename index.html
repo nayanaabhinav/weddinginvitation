@@ -60,14 +60,14 @@
             min-height: 100vh;
             width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start; /* Aligns content to top */
+            justify-content: center; /* Horizontally centered */
             text-align: center;
             position: relative;
-            padding: 20px 20px 80px 20px; 
+            padding: 80px 20px 40px 20px; /* Top padding controls distance from browser top */
             background-color: var(--primary-navy); 
             
-            /* ===== BACKGROUND IMAGE FIXES ===== */
+            /* Background Image */
             background-image: url('https://lh3.googleusercontent.com/d/1mNAO8WK8gttdh3LSxNpr2ZcrQixZ8UgO'); 
             background-size: cover; 
             background-position: center 80%; 
@@ -94,14 +94,15 @@
             z-index: 1;
             padding: 20px 30px;
             background: transparent;
-            margin-top: -120px; /* Shifts text towards top center */
-            animation: fadeInUp 1.5s ease forwards;
+            margin-top: 0;
+            transform: none;
+            animation: fadeInDown 1.5s ease forwards;
         }
 
-        @keyframes fadeInUp {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(20px); 
+                transform: translateY(-20px); 
             }
             to {
                 opacity: 1;
@@ -109,7 +110,6 @@
             }
         }
 
-        /* NORMAL / ELEGANT SERIF FONT FOR MAIN TITLE */
         .main-title {
             font-family: 'Cinzel', serif;
             font-size: clamp(2.8rem, 8vw, 5.5rem);
@@ -477,14 +477,13 @@
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 100vh;
-                padding: 20px 20px 40px 20px;
+                padding: 50px 20px 40px 20px;
                 background-size: cover;
                 background-position: center center;
             }
 
             .hero-content {
-                padding: 30px 20px;
-                margin-top: -60px;
+                padding: 20px 15px;
             }
 
             .countdown-container {
