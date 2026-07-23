@@ -144,7 +144,7 @@
         .wedding-date {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.2rem, 2.5vw, 2.0rem);
-            color: var(--white); /* Changed date font color to white */
+            color: var(--white);
             letter-spacing: 8px;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
             margin-top: 25px;
@@ -369,6 +369,60 @@
             line-height: 1.7;
         }
 
+        /* ===== PHOTOS SECTION ===== */
+        .photos-section {
+            padding: 90px 20px;
+            background: var(--white);
+        }
+
+        .photos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .photo-card {
+            background: var(--primary-cream);
+            padding: 12px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(201, 160, 74, 0.15);
+            transition: all 0.4s ease;
+            flex: 1;
+            min-width: 300px;
+            max-width: 460px;
+            overflow: hidden;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .photo-wrapper {
+            width: 100%;
+            height: 380px;
+            border-radius: calc(var(--border-radius) - 4px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .photo-card:hover .photo-wrapper img {
+            transform: scale(1.05);
+        }
+
         /* ===== BUTTONS ===== */
         .event-actions {
             display: flex;
@@ -512,6 +566,10 @@
                 flex: none;
                 width: 100%;
             }
+
+            .photo-wrapper {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -532,6 +590,10 @@
 
             .countdown-box span {
                 font-size: 2rem;
+            }
+
+            .photo-wrapper {
+                height: 260px;
             }
         }
     </style>
@@ -588,6 +650,23 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- ===== PHOTOS SECTION ===== -->
+        <section class="photos-section">
+            <h2 class="section-title">Our Moments</h2>
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1HjzmDUlI538BIu4bv1guHRpOYMhTQvxo=s1200" alt="Abhinav & Nayana Moment 1" loading="lazy" />
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1bTuOZ8mSTZXdBrdVz7DTd9wQA4d8cDGL" alt="Abhinav & Nayana Moment 2" loading="lazy" />
+                    </div>
+                </div>
             </div>
         </section>
 
